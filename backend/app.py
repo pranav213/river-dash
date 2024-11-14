@@ -1,9 +1,9 @@
-from flask import Flask, send_file, jsonify
-from flask_cors import CORS  # Import CORS
+from flask import Flask, send_file, jsonify, request
+from flask_cors import CORS
 from routes.api import generate_heatmap
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for the entire app
+CORS(app)
 
 @app.route('/')
 def index():
@@ -11,8 +11,11 @@ def index():
 
 @app.route('/generate-heatmap', methods=['GET'])
 def get_heatmap():
+    river = request.args.get('river')
+    if not river:
+        return jsonify({'error': 'No river specified'}), 400
     try:
-        image_path = generate_heatmap()  # Call the imported function
+        image_path = generate_heatmap(river)  # Pass the river parameter
         return send_file(image_path, mimetype='image/png')
     except Exception as e:
         return jsonify({'error': str(e)}), 500
