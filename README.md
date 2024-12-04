@@ -91,25 +91,6 @@ The application will:
 Send a request to the backend (http://localhost:3001/generate-heatmap?river=<RIVER_NAME>).
 Generate a heatmap based on the selected river's data.
 Display the heatmap in the browser.
-Troubleshooting
-
-Common Issues
-Dropdown Not Working:
-Ensure Bootstrap dependencies are correctly imported in the React app (index.js):
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-500 Error (Server Issue):
-Check the terminal running the Flask backend for error messages.
-Ensure CSV file paths are correct and the files exist in the backend/data/ folder.
-CORS Errors:
-Ensure Flask-CORS is installed and configured in app.py:
-from flask_cors import CORS
-app = Flask(__name__)
-CORS(app)
-Heatmap Not Generating:
-Verify the backend logs to ensure the correct CSV file is being processed.
-Check if the public/images/ folder exists and has write permissions.
-Shutting Down the Project
 
 Stop the Backend Server: Press CTRL+C in the terminal running python app.py.
 Stop the Frontend Server: Press CTRL+C in the terminal running npm start.
