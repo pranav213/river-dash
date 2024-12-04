@@ -1,14 +1,20 @@
-River-Dash
+# River-Dash
 
-River-Dash is a web-based application designed for monitoring river data and visualizing correlation heatmaps for selected rivers. The project consists of a Flask backend for data processing and a React frontend for user interaction.
+**River-Dash** is a web-based application designed for monitoring river data and visualizing correlation heatmaps for selected rivers. The project consists of a **Flask backend** for data processing and a **React frontend** for user interaction.
 
-Features
+---
 
-Dropdown for River Selection: Choose from multiple rivers (Mandovi, Sal, Zuari).
-Dynamic Heatmap Generation: Generates correlation heatmaps for the selected river based on CSV data.
-Interactive Frontend: User-friendly interface built with React.
-Project Structure
+## Features
 
+- **Dropdown for River Selection**: Choose from multiple rivers (Mandovi, Sal, Zuari).
+- **Dynamic Heatmap Generation**: Generates correlation heatmaps for the selected river based on CSV data.
+- **Interactive Frontend**: User-friendly interface built with React.
+
+---
+
+## Project Structure
+
+```plaintext
 river-dash/
 ├── backend/
 │   ├── app.py                 # Main Flask application
@@ -29,6 +35,8 @@ river-dash/
 │   │   └── index.js           # Entry point for React app
 │   └── package.json           # Frontend dependencies
 └── README.md                  # Project documentation
+
+
 Prerequisites
 
 Python (3.8 or higher)
